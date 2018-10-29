@@ -15,7 +15,8 @@ class Grade(models.Model):
 class Student(models.Model):
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
+    grade = models.ForeignKey(Grade, related_name='students',
+                              on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['last_name', 'first_name']
@@ -26,7 +27,8 @@ class Student(models.Model):
 
 class Line(models.Model):
     date = models.DateField()
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, related_name='lines',
+                                on_delete=models.CASCADE)
     time_in = models.TimeField()
     in_signature = models.ImageField()
     time_out = models.TimeField()
