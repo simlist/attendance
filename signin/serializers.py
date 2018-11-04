@@ -3,7 +3,7 @@ from rest_framework import serializers
 from .models import Grade, Student, Line
 
 class GradeSerializer(serializers.ModelSerializer):
-    students = serializers.StringRelatedField(many=True)
+    students = StudentSerializer(many=True, read_only=True)
 
     class Meta:
         model = Grade
