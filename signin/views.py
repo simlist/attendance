@@ -7,6 +7,6 @@ from . import models
 from . import serializers
 
 # Create your views here.
-def index(generics.ListCreateAPIView):
-    query_set = Grade.objects.all()
+class Index(generics.ListCreateAPIView):
+    queryset = models.Grade.objects.all()
     serializer_class = serializers.GradeSerializer
