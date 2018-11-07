@@ -10,3 +10,7 @@ from . import serializers
 class Index(generics.ListCreateAPIView):
     queryset = models.Grade.objects.all()
     serializer_class = serializers.GradeSerializer
+
+class StudentsList(generics.RetrieveAPIView):
+    queryset = models.Student.objects.all()
+    serializer_class = serializers.StudentSerializer
