@@ -12,5 +12,9 @@ class Index(generics.ListCreateAPIView):
     serializer_class = serializers.GradeSerializer
 
 class StudentsList(generics.RetrieveAPIView):
+    queryset = models.Grade.objects.all()
+    serializer_class = serializers.GradeSerializer
+
+class StudentDetail(generics.RetrieveUpdateAPIView):
     queryset = models.Student.objects.all()
     serializer_class = serializers.StudentSerializer
