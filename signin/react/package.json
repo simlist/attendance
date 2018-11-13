@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:serve": "python ../../manage.py runserver",
-    "dev:parcel": "parcel watch ./src/index.html --out-dir ../templates/signin/",
+    "dev:webpack": "webpack --config webpack.config.js --mode development",
     "start": "npm-run-all -p dev:*"
   },
   "author": "simlist",
