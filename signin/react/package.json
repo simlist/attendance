@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "parcel ./src/index.html"
+	  "dev:serve": "python ../../manage.py runserver",
+	  "dev:parcel": "parcel watch ./src/index.html --out-dir ../templates/signin/",
+    "start": "npm-run-all -p dev:*"
   },
   "author": "simlist",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "jest": "^23.6.0",
