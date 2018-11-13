@@ -7,13 +7,19 @@ from . import models
 from . import serializers
 
 # Create your views here.
-class Index(generics.ListCreateAPIView):
+def Home(request):
+    return render(request, 'signin/index.html')
+
+
+class List(generics.ListCreateAPIView):
     queryset = models.Grade.objects.all()
     serializer_class = serializers.GradeSerializer
+
 
 class StudentsList(generics.RetrieveAPIView):
     queryset = models.Grade.objects.all()
     serializer_class = serializers.GradeSerializer
+
 
 class StudentDetail(generics.RetrieveUpdateAPIView):
     queryset = models.Student.objects.all()
