@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev:serve": "python ../../manage.py runserver",
+    "dev:sass": "node-sass --watch ./src/stylesheets/ --source-map true --output ../static/signin/",
     "dev:webpack": "webpack --config webpack.config.js --mode development",
     "start": "npm-run-all -p dev:*"
   },
