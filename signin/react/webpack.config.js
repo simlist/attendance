@@ -5,7 +5,7 @@ module.exports = {
   
   output: {
     filename: 'bundle.js',
-    path: '../static/signin'
+    path: path.resolve('../static/signin/')
   },
 
   module: {
