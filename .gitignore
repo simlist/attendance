@@ -1,3 +1,10 @@
 */__pycache__/**
 */migrations/**
 /db.*
+.vscode/**
+**/node_modules/
+.cache/
+**/dist/
+*workspace
+**/static/*/styles.css
+*.css.map
