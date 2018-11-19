@@ -8,6 +8,8 @@ module.exports = {
     path: path.resolve('../static/signin/')
   },
 
+  watch: true,
+
   module: {
       rules: [
           {
