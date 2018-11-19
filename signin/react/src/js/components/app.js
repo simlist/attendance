@@ -1,26 +1,24 @@
 import React, {Component} from 'react';
 
+
 class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {data: []};
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:8000/signin/list.json')
+        .then((response) => response.json())
+        .then((data) => this.setState({data: data}));
     }
 
     render() {
+        const grades = this.state.data.map((grade) => <a className="grade" id={grade.name} key={grade.name}>{grade.name}</a>)
         return (
-        <div className="classes-container">
-          <a className="class">2Y</a>
-          <a className="class">3Y</a>
-          <a className="class">Pre-K</a>
-          <a className="class">First Grade</a>
-          <a className="class">Second Grade</a>
-          <a className="class">Third Grade</a>
-          <a className="class">Fourth Grade</a>
-          <a className="class">Fifth Grade</a>
-          <a className="class">Sixth Grade</a>
-          <a className="class">Seventh Grade</a>
-          <a className="class">Eight Grade</a>
+        <div className="grades-container">
+          {grades}
         </div>
     );}
 }
