@@ -1,13 +1,14 @@
-import React, {Component} from React;
+import React, {Component} from 'react';
 
-export default grade = (props) => {
-    students = props.students.map((student) => {
-        return <a href="/signin/students/{student.id}" key={student.id}>{student.last_name} {student.first_name}</a>
+const Grade = (props) => {
+    const students = props.students.map((student) => {
+        return <a href="/signin/students/{student.id}" key={"student" + student.id}>{student.last_name} {student.first_name}</a>;
     })
     return (
   <article className="grade">
-    <h3>{props.grade.name}</h3>
+    <h3>{props.name}</h3>
     {students}
   </article>
     );
 }
+export default Grade;
