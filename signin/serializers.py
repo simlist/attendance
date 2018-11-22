@@ -5,7 +5,7 @@ from .models import Grade, Student, Line
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = ('id', 'last_name', 'first_name', 'grade') 
+        fields = ('id', 'last_name', 'first_name', 'grade')
 
 
 class GradeSerializer(serializers.ModelSerializer):
@@ -14,3 +14,9 @@ class GradeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Grade
         fields = ('id', 'name', 'students')
+
+class LineSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Line
+        fields = ('date', 'student', 'time_in', 'in_signature',
+                  'time_out', 'out_signature')

@@ -24,3 +24,12 @@ class StudentsList(generics.RetrieveAPIView):
 class StudentDetail(generics.RetrieveUpdateAPIView):
     queryset = models.Student.objects.all()
     serializer_class = serializers.StudentSerializer
+
+
+class LineDetail(generics.RetrieveUpdateAPIView):
+    queryset = models.Line.objects.all()
+    serializer_class = serializers.LineSerializer
+
+
+class CreateLine(generics.CreateAPIView):
+    serializer_class = serializers.LineSerializer
