@@ -11,7 +11,7 @@ def Home(request):
     return render(request, 'signin/index.html')
 
 
-class List(generics.ListCreateAPIView):
+class GradesList(generics.ListCreateAPIView):
     queryset = models.Grade.objects.all()
     serializer_class = serializers.GradeSerializer
 
