@@ -9,15 +9,23 @@ h1, h2 {
 
 .grades-container {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
 }
 
-.grade{
+.gradelink {
     height: 50px;
     flex: 1 0 100%;
     background-color: lightgrey;    
     border: 1px solid white;
     display: flex;
+    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
+}
+
+.grade {
+    display: flex;
+    flex-direction: column; 
+    margin: 5px;
+    background-color: white;
 }
