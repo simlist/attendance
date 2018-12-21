@@ -139,3 +139,10 @@ CORS_ORIGIN_WHITELIST = [
     'localhost:8000',
     '127.0.0.1:8000',
 ]
+
+# https://www.django-rest-framework.org
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.SessionAuthentication',
+        )
+}
